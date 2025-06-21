@@ -1,0 +1,85 @@
+.intro, .armar-viaje, main section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .intro h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .texto {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .caja form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .caja input, .caja button {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .caja button {
+            background-color: #310838;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .caja button:hover {
+            background-color: #310838;
+        }
+
+        .result-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .result-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .result-card p {
+            margin: 5px 0;
+        }
+
+        .result-card form {
+            margin-top: 10px;
+        }
+
+        .result-card button {
+            padding: 8px 15px;
+            background-color: #753181;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result-card button:hover {
+            background-color: #823091;
+        }
+        .btn-perso{
+            background-color: #753181;
+            color: white;
+            border: none;
+        }
+        .btn-perso:hover{
+            background-color: #823091;
+        }

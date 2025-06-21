@@ -1,0 +1,25 @@
+/*HEAD*/
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    color: #310838;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #310838;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.texto {
+    text-align: center;
+    color: #310838;
+    font-size: 1.2em;
+    margin: 20px 0;
+}

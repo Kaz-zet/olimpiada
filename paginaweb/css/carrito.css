@@ -1,0 +1,94 @@
+/* ==== body.css (solo lo necesario para esta vista) ==== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+}
+
+h2, h3 {
+    color: #4d2255;
+    margin-bottom: 10px;
+}
+
+/* ==== carrito.css ==== */
+.contenedor {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.contenedor div {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+form {
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background-color: #4d2255;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+button[type="submit"]:hover {
+    background-color: #a829b9;
+}
+
+form:last-of-type {
+    margin-bottom: 20px;
+}
+
+h3:last-of-type {
+    font-size: 1.5em;
+    color: #4d2255;
+    margin-top: 20px;
+}
+
+/* Estilos para mensajes o errores */
+.contenedor p {
+    margin: 5px 0;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 600px) {
+    .contenedor {
+        padding: 15px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+.btn-volver {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #95a5a6;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-volver:hover {
+    background-color: #7f8c8d;
+}

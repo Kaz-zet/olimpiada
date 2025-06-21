@@ -1,0 +1,37 @@
+
+
+
+
+/*INFORMACION*/
+.informacion {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: #dadada;
+    padding: 20px;
+}
+/*REDES SOCIALES*/
+.red{
+    display: inline-block;
+    margin: 0 30px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+/*ENLACE*/
+.enlace a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+
+
+/*SECCION PERFIL*/
+
+
+
+
+
