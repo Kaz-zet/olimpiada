@@ -66,16 +66,12 @@ form a{
     margin-bottom: 25px;
 }
 .btn{
-    background: linear-gradient(
-        90deg,
-        #9648bd
-        #721083
-    );
+    background-color: #9648bd;
     padding: 15px 80px;
     border: 0;
     box-shadow: 0 0 20px rgb(0, 0, 0);
     border-radius: 25px;
-    color: #FCFEF7;
+    color: #e6e6e6;
     font-size: 15px;
     cursor: pointer;
 }
