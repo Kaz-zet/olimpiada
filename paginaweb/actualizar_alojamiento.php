@@ -1,4 +1,5 @@
 <?php
+//Actualiza el ajoamiento con unos nuevos valores.
 include("includes/conDB.php");
 
 if (isset($_POST['idalojamiento'], $_POST['nombre'], $_POST['direccion'], $_POST['precio'], $_POST['moneda'], $_POST['fechaentrada'], $_POST['fechasalida'])) {

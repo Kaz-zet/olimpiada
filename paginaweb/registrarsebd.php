@@ -5,6 +5,7 @@ include("includes/conDB.php");
 if(isset($_POST['send'])){
 
     if(
+        //Verifica que todas sean verdaderas al mismo tiempo.
         strlen($_POST['name']) >= 1 &&
         strlen($_POST['surname']) >=  1&&
         strlen($_POST['password']) >= 1 &&

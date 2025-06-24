@@ -27,7 +27,7 @@ $resultado = mysqli_query($conex, $query);
     <?php endwhile; ?>
     <?php
 
-    //se aggrega al carrito los productos
+    //se agrega al carrito los productos.
     $consulta = "SELECT * FROM producto";
     $resultado = mysqli_query($conex, $consulta);
     while ($producto = mysqli_fetch_assoc($resultado)) {

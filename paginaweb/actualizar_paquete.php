@@ -1,4 +1,5 @@
 <?php
+//Actualiza el paquete con unos nuevos valores.
 include("includes/conDB.php");
 
 if (isset($_POST['idpaquete'], $_POST['nombre'], $_POST['descripcion'], $_POST['precio'], $_POST['moneda'], $_POST['fechaida'], $_POST['fechavuelta'])) {

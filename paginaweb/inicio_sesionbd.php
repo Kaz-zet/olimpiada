@@ -6,7 +6,7 @@ if (isset($_POST['login'])) {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Se chusmea en jefe de ventas
+    //Se revisa en jefe de ventas.
     $query_jefe = "SELECT * FROM jefeventas WHERE email='$email'";
     $resultado_jefe = mysqli_query($conex, $query_jefe);
 
@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
             $mensaje = "Contraseña o usuario incorrecta";
         }
     } else {
-        // Si no se encuentra en jefe de ventas se chusmea en cliente
+        // Si no se encuentra en jefe de ventas se revisa en cliente.
         $query_cliente = "SELECT * FROM cliente WHERE email='$email'";
         $resultado_cliente = mysqli_query($conex, $query_cliente);
 

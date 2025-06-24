@@ -30,7 +30,7 @@ session_start();
 
     <div class="resultados">
 <?php
-// Variables al buscar
+//Variables al buscar.
 $nombre = isset($_GET['nombre']) ? mysqli_real_escape_string($conex, $_GET['nombre']) : '';
 
 $fechaentrada = '';
@@ -42,8 +42,7 @@ $fechasalida = '';
 if (!empty($_GET['fechasalida']) && preg_match('/^\d{4}-\d{2}-\d{2}$/', $_GET['fechasalida'])) {
     $fechasalida = $_GET['fechasalida'];
 }
-
-// Consulta SQL
+//Consulta SQL.
 $query = "SELECT * FROM alojamiento WHERE 1=1";
 if ($nombre !== '') {
     $query .= " AND nombre LIKE '%$nombre%'";
@@ -72,7 +71,7 @@ if (!$resultado) {
             echo "<p><strong>Desde:</strong> " . $aloj['fechaentrada'] . "</p>";
             echo "<p><strong>Hasta:</strong> " . $aloj['fechasalida'] . "</p>";
 
-            // Agregar al carrito
+            //Agrega al carrito.
             echo '<form action="agregar_carrito.php" method="post">';
             echo '<input type="hidden" name="idalojamiento" value="' . $aloj['idalojamiento'] . '">';
             echo '<button type="submit">Agregar al carrito</button>';

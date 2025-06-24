@@ -8,7 +8,7 @@ if (!isset($_SESSION['carrito']) || empty($_SESSION['carrito'])) {
 
 include("includes/conDB.php");
 
-// Calcular y mostrar resumen del carrito
+//Calcular y mostrar resumen del carrito.
 $total = 0;
 ?>
 
@@ -31,6 +31,7 @@ $total = 0;
 <h2>Resumen del carrito</h2>
 <ul>
 <?php
+//Muestra el resumen del carrito con cada item.
 foreach ($_SESSION['carrito'] as $clave => $cantidad) {
     if (preg_match('/^prod_(\d+)$/', $clave, $match)) {
         $id = intval($match[1]);

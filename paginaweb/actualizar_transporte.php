@@ -1,4 +1,5 @@
 <?php
+//Actualiza el transporte con unos nuevos valores.
 include("includes/conDB.php");
 
 if (isset($_POST['idtransporte'], $_POST['nombre'], $_POST['ubicacion'], $_POST['precio'], $_POST['moneda'], $_POST['fechareserva'], $_POST['fechadevolucion'])) {

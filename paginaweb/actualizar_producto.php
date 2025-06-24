@@ -1,4 +1,5 @@
 <?php
+//Actualiza el producto con unos nuevos valores.
 include("includes/conDB.php");
 
 if (isset($_POST['idproducto'], $_POST['nombre'], $_POST['codigo'], $_POST['descripcion'], $_POST['precio'], $_POST['moneda'], $_POST['fechaida'], $_POST['fechavuelta'],)) {

@@ -36,14 +36,14 @@ echo "<h2>Tu carrito</h2>";
 
 $total = 0;
 
-// Recorremos el carrito
+//Recorremos el carrito.
 foreach ($carrito as $clave => $cantidad) {
-    // Detectar tipo e ID: ejemplo 'prod_5'
+    //Encuentra tipo e ID.
     if (preg_match('/^(prod|paq|trans|aloja)_(\d+)$/', $clave, $match)) {
-        $tipo = $match[1];  // prod, paq, etc.
+        $tipo = $match[1];  //prod, paq, etc.
         $id = intval($match[2]);
 
-        // Definir tabla y campo
+        //Define tabla y campo.
         switch ($tipo) {
             case 'prod':
                 $tabla = 'producto';
@@ -62,10 +62,10 @@ foreach ($carrito as $clave => $cantidad) {
                 $campo = 'idalojamiento';
                 break;
             default:
-                continue 2; // salta al siguiente ítem si no coincide
+                continue 2; //salta al siguiente ítem si no coincide.
         }
 
-        // Obtener datos desde la base
+        //Obtiene datos desde la base.
         $sql = "SELECT * FROM $tabla WHERE $campo = $id";
         $res = mysqli_query($conex, $sql);
         $item = mysqli_fetch_assoc($res);
@@ -79,13 +79,13 @@ foreach ($carrito as $clave => $cantidad) {
             echo "<p>Cantidad: $cantidad</p>";
             echo "<p>Subtotal: $" . number_format($subtotal, 2) . "</p>";
 
-            // Botón: Quitar una unidad
+            //Sacar una unidad sola.
             echo '<form action="quitar_unidad.php" method="post">';
             echo '<input type="hidden" name="clave" value="' . htmlspecialchars($clave) . '">';
             echo '<button type="submit">Quitar 1 unidad</button>';
             echo '</form>';
 
-            // Botón: Eliminar completamente
+            //Elimina todo, indepednientemente de la cantidad.
             echo '<form action="eliminar_carrito.php" method="post">';
             echo '<input type="hidden" name="clave" value="' . htmlspecialchars($clave) . '">';
             echo '<button type="submit">Eliminar</button>';

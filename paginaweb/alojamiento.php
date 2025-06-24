@@ -88,6 +88,9 @@
     </section>
     <h1>Encontrá tu Alojamiento</h1>
     <?php
+
+
+//Esto permite que las "tarjetas" sean visibles en la página donde cada alojamiento tiene la suya propia.
           $query = "SELECT * FROM alojamiento";
           $resultado = mysqli_query($conex, $query);
             while ($producto = mysqli_fetch_assoc($resultado)) {

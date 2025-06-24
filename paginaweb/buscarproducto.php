@@ -30,7 +30,7 @@ session_start();
 
     <div class="resultados">
 <?php
-// Variables al buscar
+// Variables al buscar.
 $nombre = isset($_GET['nombre']) ? mysqli_real_escape_string($conex, $_GET['nombre']) : '';
 
 $fechaida = '';
@@ -43,7 +43,7 @@ if (!empty($_GET['fechavuelta']) && preg_match('/^\d{4}-\d{2}-\d{2}$/', $_GET['f
     $fechavuelta = $_GET['fechavuelta'];
 }
 
-// Arma consulta SQL para buscar
+//Se hace una consulta SQL para buscar.
 $query = "SELECT * FROM producto WHERE 1=1";
 if ($nombre !== '') {
     $query .= " AND nombre LIKE '%$nombre%'";
@@ -73,7 +73,7 @@ if (!$resultado) {
             echo "<p><strong>Desde:</strong> " . $producto['fechaida'] . "</p>";
             echo "<p><strong>Hasta:</strong> " . $producto['fechavuelta'] . "</p>";
 
-            //boton para agregar al carrito
+            //boton para agregar al carrito.
             echo '<form action="agregar_carrito.php" method="post">';
             echo '<input type="hidden" name="idproducto" value="' . $producto['idproducto'] . '">';
             echo '<button type="submit">Agregar al carrito</button>';

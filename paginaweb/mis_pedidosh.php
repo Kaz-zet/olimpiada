@@ -9,7 +9,7 @@ if (!isset($_SESSION['usuario']) || $_SESSION['cargo'] !== 'cliente') {
 
 $nombreCliente = $_SESSION['usuario'];
 
-// Obtener idcliente
+//Obtiene idcliente
 $queryCliente = "SELECT idcliente FROM cliente WHERE nombre = '$nombreCliente'";
 $resCliente = mysqli_query($conex, $queryCliente);
 $rowCliente = mysqli_fetch_assoc($resCliente);
@@ -30,7 +30,7 @@ function obtenerNombreItem($pedido, $conex) {
         if ($row = mysqli_fetch_assoc($res)) return $row['nombre'];
     }
 
-    // Debug temporal:
+    //En caso de error.
     error_log("⚠️ Pedido con ID desconocido. Fila: " . json_encode($pedido));
     return "Desconocido";
 }

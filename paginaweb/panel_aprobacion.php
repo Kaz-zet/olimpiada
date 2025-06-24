@@ -37,7 +37,7 @@ while ($pedido = mysqli_fetch_assoc($resultado)) {
     echo "<p><strong>ID Pedido:</strong> {$pedido['idpedido']}</p>";
     echo "<p><strong>Cliente:</strong> {$pedido['cliente']}</p>";
 
-    // Mostrar los ítems que existen
+    //Muestra los items que existen.
     if (!empty($pedido['nombre_producto'])) {
         echo "<p><strong>Producto:</strong> {$pedido['nombre_producto']}</p>";
     }
@@ -54,7 +54,7 @@ while ($pedido = mysqli_fetch_assoc($resultado)) {
     echo "<p><strong>Total:</strong> {$pedido['total']}</p>";
     echo "<p><strong>Estado:</strong> {$pedido['estado']}</p>";
 
-    // Botones de acción
+    //Para aprobar o rechazar.
     echo "<form action='procesar_aprobacion.php' method='post' style='display:inline'>";
     echo "<input type='hidden' name='idpedido' value='{$pedido['idpedido']}'>";
     echo "<input type='hidden' name='accion' value='aprobar'>";

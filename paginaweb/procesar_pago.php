@@ -8,8 +8,8 @@ if (!isset($_SESSION['carrito']) || empty($_SESSION['carrito'])) {
 
 include("includes/conDB.php");
 
-$idCliente = $_SESSION['idcliente'] ?? 1; // fallback a 1 si no está
-$idJefe = 1; // o lógica para obtener jefe disponible
+$idCliente = $_SESSION['idcliente'] ?? 1; 
+$idJefe = 1;
 
 $nombre = $_POST['nombre'];
 $numero = $_POST['numero'];
@@ -22,7 +22,7 @@ $fechaCobro = date("Y-m-d H:i:s");
 $carrito = $_SESSION['carrito'];
 $total = 0;
 
-// Calcular total, detectando tipo de ítem
+//Calcula el total, detectando tipo.
 foreach ($carrito as $clave => $cantidad) {
     if (preg_match('/^prod_(\d+)$/', $clave, $match)) {
         $id = intval($match[1]);
@@ -37,7 +37,7 @@ foreach ($carrito as $clave => $cantidad) {
         $id = intval($match[1]);
         $res = mysqli_query($conex, "SELECT precio FROM alojamiento WHERE idalojamiento = $id");
     } else {
-        continue; // clave no válida, ignorar
+        continue;
     }
 
     if ($row = mysqli_fetch_assoc($res)) {
@@ -45,19 +45,19 @@ foreach ($carrito as $clave => $cantidad) {
     }
 }
 
-// Inserta en tabla cobro
+//Inserta en tabla cobro.
 mysqli_query($conex, "INSERT INTO cobro (montopagado, metodopago, estadopago, fechacobro) 
 VALUES ($total, '$metodo', 'pendiente', '$fechaCobro')");
 $idCobro = mysqli_insert_id($conex);
 
-// Inserta en tabla email
+//Inserta en tabla email.
 $asunto = "Gracias por tu compra";
 $cuerpo = "Tu compra fue registrada por un total de $$total. Estado: pendiente de aprobación.";
 mysqli_query($conex, "INSERT INTO email (destinatario, asunto, cuerpo, fechaenvio, estadoenvio) 
 VALUES ('$email', '$asunto', '$cuerpo', '$fechaCobro', 'pendiente')");
 $idEmail = mysqli_insert_id($conex);
 
-// Inserta en tabla pedido por cada ítem, según tipo
+//Inserta en tabla pedido por cada item, segun el tipo.
 foreach ($carrito as $clave => $cantidad) {
     for ($i = 0; $i < $cantidad; $i++) {
         if (preg_match('/^prod_(\d+)$/', $clave, $match)) {
@@ -83,7 +83,7 @@ foreach ($carrito as $clave => $cantidad) {
     }
 }
 
-unset($_SESSION['carrito']); // Vaciar carrito
+unset($_SESSION['carrito']); //Vaciar carrito.
 
 echo "<p>✅ Compra registrada. Un jefe de ventas la aprobará pronto.</p>";
 echo "<a href='inicio.html'>Volver a la tienda</a>";

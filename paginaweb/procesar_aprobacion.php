@@ -2,7 +2,7 @@
 session_start();
 include("includes/conDB.php");
 
-// Vuelve a verificar si es un jefe
+//Vuelve a verificar si es un jefe
 if (!isset($_SESSION['cargo']) || $_SESSION['cargo'] !== 'jefe') {
     echo "Acceso denegado.";
     exit;
@@ -25,12 +25,12 @@ if (isset($_POST['idpedido']) && isset($_POST['accion'])) {
         exit;
     }
 
-    // Actualiza el estado del pedido
+    //Actualiza el estado del pedido
     $sqlPedido = "UPDATE pedido SET estado = '$nuevoEstadoPedido' WHERE idpedido = $idpedido";
     $exitoPedido = mysqli_query($conex, $sqlPedido);
 
     if ($exitoPedido) {
-        // usca idcobro e idemail del pedido
+        //busca idcobro e idemail del pedido
         $consultaDatos = "SELECT idcobro, idemail FROM pedido WHERE idpedido = $idpedido";
         $resultadoDatos = mysqli_query($conex, $consultaDatos);
         $fila = mysqli_fetch_assoc($resultadoDatos);
